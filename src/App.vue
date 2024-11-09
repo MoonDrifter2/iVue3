@@ -13,7 +13,7 @@
             <button @click="showChild">Show Child</button>
         </div>
 
-        <div class="navigate">
+        <!-- <div class="navigate">
             <RouterLink active-class="hover" :to="{ path: '/home' }">首页</RouterLink>
             <RouterLink active-class="hover" :to="{ name: 'dongtai' }">动态</RouterLink>
             <RouterLink active-class="hover" to="/about">关于</RouterLink>
@@ -21,7 +21,10 @@
 
         <div class="content">
             <RouterView></RouterView>
-        </div>
+        </div> -->
+
+        <Count />
+        <Say />
     </div>
 </template>
 
@@ -36,6 +39,9 @@ import Name from '@/components/Name.vue'
 import Car from '@/components/Car.vue'
 import Sum from '@/components/Sum.vue'
 import Son from '@/components/Son.vue'
+
+import Count from '@/components/Count.vue'
+import Say from '@/components/Say.vue'
 
 let child = ref()
 

@@ -3,7 +3,15 @@
         <div class="aside">
             <ul>
                 <li v-for="item in newsList" :key="item.id">
-                    <RouterLink :to="{ path: '/news/detail' }">{{ item.title }}</RouterLink>
+                    <!-- <RouterLink :to="`/news/detail?id=${item.id}`">{{ item.title }}</RouterLink> -->
+                    <!-- <RouterLink :to="{ path: '/news/detail', query: { id: item.id } }">{{ item.title }}</RouterLink> -->
+
+                    <!-- <RouterLink :to="`/news/detail/${item.id}`">{{ item.title }}</RouterLink> -->
+                    <!-- params传参（对象写法）：不能用path只能用name，params对象内属性名需要对应路由内的占位符，属性值只能是基本数据类型 -->
+                    <!-- <RouterLink :to="{ name: 'more', params: { id: item.id } }">{{ item.title }}</RouterLink> -->
+                    <RouterLink replace :to="{ name: 'more', params: { id: item.id }, query: { name: 'meffe' } }">{{
+                        item.title
+                        }}</RouterLink>
                 </li>
             </ul>
         </div>

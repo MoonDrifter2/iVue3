@@ -17,13 +17,24 @@ const router = createRouter({
         path: '/news',
         component: News,
         children: [{
-            path: 'detail',
-            component: Detail
+            name: 'more',
+            path: 'detail/:id?', // :占位符?必要性
+            component: Detail,
+            // props: true // 仅params
+            props(route) {
+                return route.query
+            }
+            // props: {
+            //     name: 'Gynmeffe'
+            // }
         }]
     }, {
         name: 'guangyu',
         path: '/about',
         component: About
+    }, {
+        path: '/',
+        redirect: '/home'
     }]
 })
 
