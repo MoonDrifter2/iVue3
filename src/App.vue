@@ -23,13 +23,31 @@
             <RouterView></RouterView>
         </div> -->
 
-        <Count />
-        <Say />
+        <!-- <Count />
+        <Say /> -->
+
+        <!-- <Shallow />
+        <Row /> -->
+
+        <!-- <Custom /> -->
+
+        <!-- <img src="https://kimi-img.moonshot.cn/prod-chat-kimi/avatar/kimi/cs7p19in6vuktm2sao6g/白色 (1) (1) (1).png"
+            alt="">
+        <Modal /> -->
+
+        <Suspense>
+            <template v-slot:default>
+                <Sync />
+            </template>
+            <template v-slot:fallback>
+                <h2>加载中...</h2>
+            </template>
+        </Suspense>
     </div>
 </template>
 
 <script lang="ts" name="App" setup>
-import { ref } from 'vue'
+import { ref, Suspense } from 'vue'
 import { RouterView, RouterLink } from 'vue-router'
 
 import Person from '@/components/Person.vue'
@@ -42,6 +60,13 @@ import Son from '@/components/Son.vue'
 
 import Count from '@/components/Count.vue'
 import Say from '@/components/Say.vue'
+
+import Shallow from '@/components/Shallow.vue'
+import Row from '@/components/Row.vue'
+
+import Custom from '@/components/Custom.vue'
+import Modal from '@/components/Modal.vue'
+import Sync from '@/components/Sync.vue'
 
 let child = ref()
 
@@ -58,6 +83,7 @@ function showChild() {
     border-radius: 10px;
     padding: 20px;
     row-gap: 20px;
+    /* filter: saturate(0%); */
 }
 
 button {
