@@ -10,7 +10,7 @@ import { ref, customRef } from 'vue'
 
 let initValue = 'Vue3'
 
-import useMsgRef from '@/hookls/useMsgRef'
+import useMsgRef from '@/hooks/useMsgRef'
 
 let msg = useMsgRef(initValue, 1000)
 
